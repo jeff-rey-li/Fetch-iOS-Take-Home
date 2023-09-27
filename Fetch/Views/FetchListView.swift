@@ -25,15 +25,15 @@ struct FetchListView: View {
             fetchListViewModel.sortEntries()
         }
     }
-    
+
     @ViewBuilder
     func scrollingList(items: [ListItem]) -> some View {
         ScrollView {
             ForEach(items) { item in
-                HStack(spacing: 10) {
+                HStack {
                     Text("id: \(item.id) · listId: \(item.listId) · name: \(item.name ?? "")")
                 }
-                
+
                 Divider()
                     .padding(.bottom, 4)
             }
